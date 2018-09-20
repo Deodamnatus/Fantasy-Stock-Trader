@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Portfolio</title>
+  <link rel="icon" href="pictures/hack_boyz.png" type="image/png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAXLQ7z1Sdcv_HMFDv_aW9I9K_jvx3R9fE",
+        authDomain: "stock-app-jgleeson.firebaseapp.com",
+        databaseURL: "https://stock-app-jgleeson.firebaseio.com",
+        projectId: "stock-app-jgleeson",
+        storageBucket: "stock-app-jgleeson.appspot.com",
+        messagingSenderId: "226475361477"
+      };
+      firebase.initializeApp(config);
+    </script>
+</head>
+<body>
+<!-- NAVBAR-->
+
+  <nav class="light-blue" role="navigation">
+    <div class="nav-wrapper">
+      <a href='poggers.html'><img style='max-height: 100%; max-width: 100%; object-fit: contain' src="pictures/hack_boyz.png"></a>
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <div id="topbarsearch">
+            <div class="input-field s6">
+              <i class="white-text material-icons prefix">search</i>
+              <input type="text" placeholder="Search" id="autocomplete-input" class="autocomplete white-text"> <!-- find way to make text white here and underline white-->
+            </div>
+          </div>
+        </li>
+        <li class='active'><a href='portfolio.html'><i class="material-icons" style='font-size: 50px'>home</i></a></li>
+        <li><a id='liquidAssets' style='font-size: 30px'></a></li>
+        <li><a id='btnSignout' style='font-size: 30px'>Log Out</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="row" id='cardContainer'>
+    <div class="col s12 m12">
+      <div class="card">
+        <div class="card-content center-align black-text">
+          <span id='netWorth' class="card-title"></span>
+        </div>
+      </div>
+    </div>
+<!--
+    <div class="col s3 m3">
+      <div class="card horizontal">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="https://storage.googleapis.com/iex/api/logos/FB.png">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content black-text">
+            <span class="card-title">FB</span>
+            <p id="FBshares">Shares: 100</p>
+            <p id="FBprice">Price: 100</p>
+          </div>
+          <div class="card-action">
+            <a href="graphs?ticker=FB">View Graph</a>
+          </div>
+        </div>
+      </div>
+    </div>
+-->
+  </div>
+   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+   <script src='js/socket.io.js'></script>
+   <script src="js/materialize.js"></script>
+   <script src="js/init.js"></script>
+   <script src='js/autocomplete.js'></script>
+   <script src='js/portfolio.js'></script>
+
+</body>

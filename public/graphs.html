@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+<head>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Graph</title>
+  <link rel="icon" href="pictures/hack_boyz.png" type="image/png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAXLQ7z1Sdcv_HMFDv_aW9I9K_jvx3R9fE",
+        authDomain: "stock-app-jgleeson.firebaseapp.com",
+        databaseURL: "https://stock-app-jgleeson.firebaseio.com",
+        projectId: "stock-app-jgleeson",
+        storageBucket: "stock-app-jgleeson.appspot.com",
+        messagingSenderId: "226475361477"
+      };
+      firebase.initializeApp(config);
+    </script>
+</head>
+<body>
+<!-- NAVBAR-->
+
+  <nav class="light-blue" role="navigation">
+    <div class="nav-wrapper">
+      <a href='poggers.html'><img style='max-height: 100%; max-width: 100%; object-fit: contain' src="pictures/hack_boyz.png"></a>
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <div id="topbarsearch">
+            <div class="input-field s6 red-text">
+              <i class="white-text material-icons prefix">search</i>
+              <input type="text" placeholder="Search" id="autocomplete-input" class="autocomplete white-text"> <!-- find way to make text white here and underline white-->
+            </div>
+          </div>
+        </li>
+        <li><a href='portfolio.html'><i class="material-icons" style='font-size: 50px'>home</i></a></li>
+        <li><a id='liquidAssets' style='font-size: 30px'></a></li>
+        <li><a id='btnSignout' style='font-size: 30px'>Log Out</a></li>
+      </ul>
+    </div>
+  </nav>
+
+    <!-- graph html -->
+    <h1 id='companyName' style = "text-align:center; font-size:34px"><h1>
+      <hr color=#c7c2c1>
+  <div class = "row">
+    <div class = "card">
+    <div class = "col s8 card">
+      <canvas id="myChart"></canvas>
+      <div style = "text-align:center;" color = "#FFFFFF">
+      <a class = "waves-effect waves-light btn-small white black-text" style = "margin-right:7%;" id='btn1d'>1 day</a>
+      <a class = "waves-effect waves-light btn-small white black-text" style = "margin-right:7%;" id='btn1m'>1 month</a>
+      <a class = "waves-effect waves-light btn-small white black-text" style = "margin-right:7%;" id='btn3m'>3 month</a>
+      <a class = "waves-effect waves-light btn-small white black-text" style = "margin-right:7%;" id='btn6m'>6 month</a>
+      <a class = "waves-effect waves-light btn-small white black-text" style = "margin-right:7%;" id='btn1y'>1 year</a>
+      <a class = "waves-effect waves-light btn-small white black-text" id='btn5y'>5 year</a>
+    </div>
+    <br>
+  </div>
+
+
+    <div class = "col s4 card">
+      <div style = "text-align:center;">
+      <p id='price'<label id = "price" style = "margin-right:7%; font-size: 40px"></label></p>
+      <p id='percentchange'<label id = "open/close" class='red-text accent-3' style = "margin-right:7%; font-size: 24px; "></label></p>
+      <label id="personalShares" style = "margin-right:5%; font-size: 16px;"></label>
+      <br>
+      <div>
+      <input type="text" id="exchange" name="q" placeholder="Amount">
+      <a id='buy' class = "waves-effect waves-light btn-small" style = "margin-right:7%;">buy</a>
+      <a id='sell' class = "waves-effect waves-light btn-small" style = "margin-right:7%;">sell</a>
+      </div>
+      </div>
+      <div>
+
+          <p id='previousclose'<label style = "margin-right:5%; font-size: 16px;"></p>
+
+          <p id='high'<label style = "margin-right:5%; font-size: 16px;"></p>
+
+          <p id='low'<label style = "margin-right:5%; font-size: 16px;"></p>
+
+          <p id='open'<label style = "margin-right:5%; font-size: 16px;"></p>
+
+        </div>
+    </div>
+
+      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src='js/socket.io.js'></script>
+      <script src="js/materialize.js"></script>
+      <script src="js/init.js"></script>
+      <script src='js/autocomplete.js'></script>
+      <script src='js/graphs.js'></script>
+</body>
+</html>

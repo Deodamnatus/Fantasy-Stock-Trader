@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+<head>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Sign Up</title>
+  <link rel="icon" href="pictures/hack_boyz.png" type="image/png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAXLQ7z1Sdcv_HMFDv_aW9I9K_jvx3R9fE",
+        authDomain: "stock-app-jgleeson.firebaseapp.com",
+        databaseURL: "https://stock-app-jgleeson.firebaseio.com",
+        projectId: "stock-app-jgleeson",
+        storageBucket: "stock-app-jgleeson.appspot.com",
+        messagingSenderId: "226475361477"
+      };
+      firebase.initializeApp(config);
+    </script>
+</head>
+<body>
+
+<div style='display: flex;position: absolute;top: 0;left: 0;height: 100%;width: 100%;'>
+  <div class="row valign-wrapper" style='margin: 0 auto;'>
+      <div class="col s6 offset-s3 valign">
+        <div id='usernameTaken' class="card red lighten-1" style='display:none'>
+          <div class="card-content white-text center-align">
+            <span class="card-title center-align">Username Already Taken</span>
+          </div>
+        </div>
+        <div id='usernameInvalid' class="card red lighten-1" style='display:none'>
+          <div class="card-content white-text center-align">
+            <span class="card-title center-align">Username Can Not Contain: ' ', '.', '#', '$', '[', or ']'</span>
+          </div>
+        </div>
+        <div id='signUpError' class="card red lighten-1" style='display:none'>
+          <div class="card-content white-text center-align">
+            <span id='errorText' class="card-title center-align"></span>
+          </div>
+        </div>
+        <div id='loading' class="card light-blue" style='display:none'>
+          <div class="card-content white-text center-align">
+            <span class="card-title center-align">Preparing your profile...</span>
+            <div class="progress">
+                <div class="indeterminate"></div>
+            </div>
+          </div>
+        </div>
+        <div id='inputForm' class="card light-blue">
+          <div class="card-content white-text center-align">
+            <span class="card-title center-align">Sign Up</span>
+            <input class='white-text' id='username' type='text' placeholder='Username'/>
+            <input class='white-text' id='password' type='password' placeholder='Password'/>
+            <a class = "waves-effect waves-light btn-small white black-text" id='signUp'>Sign Up</a>
+          </div>
+          <div class="card-action">
+            <a class='white-text' href="login.html">Already have an account? Log in here.</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="js/materialize.js"></script>
+  <script src='js/signUp.js'></script>
+</body>
+</html>

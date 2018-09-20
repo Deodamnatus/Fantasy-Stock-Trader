@@ -1,0 +1,40 @@
+{
+  "rules": {
+    "usernames":{
+      ".read": true,
+      ".write": false
+    },
+    "users":{
+      ".read":"auth != null",
+      ".write":false,
+      "$uid":{
+        "username":{
+          ".write":false
+        },
+        "transactions":{
+          ".write":false
+        },
+        "shares":{
+          ".write":"$uid === auth.uid",
+          "$symbol":{
+            ".write":"$uid === auth.uid",
+            "$other":{
+              "$somethingElse":{
+                ".write":false
+              }
+            }
+          }
+        },
+        "liquidAssets":{
+          ".write":false
+        },
+        "$other":{
+          ".write":false
+        }
+      }
+    },
+    "$other":{
+      ".write":false
+    }
+  }
+}
