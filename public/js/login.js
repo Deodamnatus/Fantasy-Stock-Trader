@@ -38,7 +38,7 @@ txtPassword.addEventListener("keyup", function(event) {
 
 firebase.auth().onAuthStateChanged(firebaseUser=>{
   if(firebaseUser){
-    window.location.href = 'portfolio.html';
+    window.location.href = 'portfolio.html'; //not updating correctly for some reason
   }else{
     console.log("Logged Out");
   }

@@ -6615,6 +6615,12 @@ $jscomp.polyfill = function (e, r, p, m) {
       value: function _handleContainerMousedownAndTouchstart(e) {
         var $autocompleteOption = $(e.target).closest('li');
         this.selectOption($autocompleteOption);
+        if (tickerDict[document.getElementById('autocomplete-input').value]){
+          window.location='graphs.html?'+tickerDict[document.getElementById('autocomplete-input').value.toString()];
+        } else{
+          alert('Invalid Company');
+          document.getElementById('autocomplete-input').value='';
+        }
       }
 
       /**

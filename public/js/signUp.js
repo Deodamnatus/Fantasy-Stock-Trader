@@ -68,7 +68,7 @@ firebase.auth().onAuthStateChanged(firebaseUser=>{
     document.getElementById('loading').style='display:show';
     firebase.database().ref('users/'+firebaseUser.uid+'/liquidAssets').on('value',function(liquidAssetsSnap){
       if (liquidAssetsSnap.val()!==null){
-      window.location='portfolio.html';
+      window.location='portfolio.html'; //not forwarding correctly for some reason
     }else{
       console.log("Account setup not complete yet");
     }
