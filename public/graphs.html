@@ -66,25 +66,28 @@
 
     <div class = "col s4 card">
       <div style = "text-align:center;">
-      <p id='price'<label id = "price" style = "margin-right:7%; font-size: 40px"></label></p>
-      <p id='percentchange'<label id = "open/close" class='red-text accent-3' style = "margin-right:7%; font-size: 24px; "></label></p>
-      <label id="personalShares" style = "margin-right:5%; font-size: 16px;"></label>
+      <p id='price' style = "font-size: 40px; text-align: center;"></p>
+      <p id='percentchange' class='red-text accent-3' style="font-size: 24px; text-align: center;"></label></p>
+      <label id="personalShares" style = "text-align: center; font-size: 16px;"></label>
       <br>
       <div>
-      <input type="text" id="exchange" name="q" placeholder="Amount">
-      <a id='buy' class = "waves-effect waves-light btn-small" style = "margin-right:7%;">buy</a>
-      <a id='sell' class = "waves-effect waves-light btn-small" style = "margin-right:7%;">sell</a>
+      <input style="text-align: center; line-height: 40px;" type="text" id="exchange" name="q" placeholder="Amount">
+      <div style="display: flex; justify-content: space-around;">
+          <a id='buy' class = "waves-effect waves-light btn-small" style = "margin-right: 0px;">buy</a>
+          <a id='sell' class = "waves-effect waves-light btn-small">sell</a>
+      </div>
       </div>
       </div>
       <div>
 
-          <p id='previousclose'<label style = "margin-right:5%; font-size: 16px;"></p>
+          <p id='previousclose' style='text-align: center; line-height: 26px; font-size: 16px;'></p>
 
-          <p id='high'<label style = "margin-right:5%; font-size: 16px;"></p>
+          <p id='high' style='text-align: center; line-height: 26px; font-size: 16px;'></p>
 
-          <p id='low'<label style = "margin-right:5%; font-size: 16px;"></p>
+          <p id='low' style='text-align: center; line-height: 26px; font-size: 16px;'></p>
 
-          <p id='open'<label style = "margin-right:5%; font-size: 16px;"></p>
+          <p id='open' style='text-align: center; line-height: 26px; font-size: 15px;'></p>
+          <p style='text-align: center; line-height: 26px; font-size: 10px;'> Data provided for free by <a href="https://iextrading.com/developer" class="">IEX</a>. View <a href="https://iextrading.com/api-exhibit-a/">IEX’s Terms of Use</a>.</p>
 
         </div>
     </div>

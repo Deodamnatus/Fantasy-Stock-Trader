@@ -12,6 +12,11 @@ function initializeApp(){
     updateNetWorth();
   });
 
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.materialboxed');
+    var instances = M.Materialbox.init(elems, options);
+  });
+
   function updateNetWorth(){
     firebase.database().ref('users/'+window.uid+'/liquidAssets').once('value', function(liquidAssetsSnap){
       var totalAssets=parseFloat(liquidAssetsSnap.val());
@@ -47,7 +52,7 @@ function initializeApp(){
 
           divCol.setAttribute('class', "col s3 m3");
           divCard.setAttribute('class', "card horizontal");
-          divCardImage.setAttribute('class', "card-image waves-effect waves-block waves-light");
+          divCardImage.setAttribute('class', "card-image waves-effect waves-light materialboxed");
           divCardStacked.setAttribute('class', "card-stacked");
           divCardContent.setAttribute('class', "card-content black-text");
           imgCard.setAttribute('class', "activator");
@@ -59,6 +64,7 @@ function initializeApp(){
           pShares.innerHTML='Shares: 0';
           pPrice.id=symbol+'price';
           pPrice.innerHTML='Price: 1';
+          
           aGraphLink.setAttribute('href', 'graphs.html?'+symbol);
 
           divCardImage.appendChild(aGraphLink);

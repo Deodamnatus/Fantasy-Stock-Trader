@@ -185,7 +185,9 @@ function initializeApp(){
   document.getElementById('buy').addEventListener('click', e=>{
     try {
       var volume=parseInt(document.getElementById('exchange').value);
-     	buyStock(volume);
+        if (volume == volume) {
+            buyStock(volume);
+        }
     } catch (e) {
       console.error(e);
     }
@@ -193,7 +195,9 @@ function initializeApp(){
   document.getElementById('sell').addEventListener('click', e=>{
     try {
       var volume=parseInt(document.getElementById('exchange').value);
-     	buyStock(-volume);
+        if (volume == volume) {
+     	      buyStock(-volume);
+        }
     } catch (e) {
       console.error(e);
     }
