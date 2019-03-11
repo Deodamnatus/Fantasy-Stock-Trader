@@ -121,6 +121,9 @@ function initializeApp(){
         }
     },
     options: {
+      legend: {
+        display: false
+      },
       scales: {
         xAxes: [{
             ticks: {

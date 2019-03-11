@@ -64,7 +64,7 @@ function initializeApp(){
           pShares.innerHTML='Shares: 0';
           pPrice.id=symbol+'price';
           pPrice.innerHTML='Price: 1';
-          
+
           aGraphLink.setAttribute('href', 'graphs.html?'+symbol);
 
           divCardImage.appendChild(aGraphLink);
@@ -83,6 +83,9 @@ function initializeApp(){
 
           firebase.database().ref('users/'+window.uid+'/shares/'+symbol).on('value', function(sharesSnap){
             document.getElementById(symbol+'shares').innerHTML='Shares: '+sharesSnap.val();
+            if (sharesSnap.val() == null) {
+                window.location.reload();
+            }
             updateNetWorth();
           });
           const socket = io('https://ws-api.iextrading.com/1.0/tops')
