@@ -3342,6 +3342,10 @@ input[type=range] + .thumb {
           user-select: none;
 }
 
+.no-hover{
+    pointer-events: none;
+}
+
 .circle {
   border-radius: 50%;
 }
